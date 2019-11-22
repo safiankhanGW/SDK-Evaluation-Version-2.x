@@ -19,5 +19,3 @@ Run the cli with the following command:
 
 Where {Input} and {Output} are your input and output directories respectively. 
 
-
-install libGL.so.1
