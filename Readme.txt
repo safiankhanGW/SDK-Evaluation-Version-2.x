@@ -19,3 +19,4 @@ Run the cli with the following command:
 
 Where {Input} and {Output} are your input and output directories respectively. 
 
+This is also availible in a pre built docker image: https://hub.docker.com/r/mgreengw/glasswall_analyseandregenerate
