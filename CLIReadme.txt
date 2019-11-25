@@ -1,4 +1,4 @@
-Run the following commands to setup the library
+To run CLI you must first run the following commands to setup the library
 
 sudo ln -s {X}/libglasswall_core2.so /usr/lib/libglasswall_core2.so.1
 sudo ln -s {X}/libQt5Concurrent.so /usr/lib/libQt5Concurrent.so.5
