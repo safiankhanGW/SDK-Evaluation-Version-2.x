@@ -13,7 +13,6 @@ This will produce a docker image with the configured *imageName*.
 Before we run a container of the image lets create an input directory and an output directory, for instance:
 
 •	C:\data\input – Place files to be processed here.
-
 •	C:\data\output – Note that your output directory must be empty or Glasswall will fail to produce an output and will destroy any data present in there.
 
 Now let’s mount the input and output directories and run a container of our image, using the following command:
