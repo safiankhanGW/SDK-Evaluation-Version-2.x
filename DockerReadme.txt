@@ -1,33 +1,35 @@
 # docker-sdk
 
-The dockerfile here can be used to build a CentOS7 image containing version 2 of the Glasswall engine which is pre configured to run files in a mounted directory in both analysis and protect modes through the engine and output the files to a mounted output directory.
+This dockerfile can be used to build a CentOS7 image, containing version 2 of the Glasswall core engine. The engine is configured to run files in both analysis and protect modes. File are processed from a mounted directory and regenerated into a separate output directory.
+Begin by downloading the files to a clean workspace. Check that the dockerfile is in the same directory as the release package (The lib folder containing all the Core 2 libraries and GWQtCLI) the release package which can be found here: https://github.com/filetrust/SDK2.01Evaluation. 
 
-To use this file simply download the file to a clean workspace and using powershell build your image, if you've never used docker before you will need to install this first.
-The dockerfile must be inside the same directory as the release package which must contain, the Core 2 libraries, GWQtCLI and the supporting libraries all of these can be found at https://github.com/filetrust/SDK2.01Evaluation note that the docker file isalsolocated there.
+If you haven’t used docker before you will need to install it now. You will need to share the drive you want to input and output data from with your instance of docker. To do this right click docker in the system tray. Click settings. Click Shared Drives and share the appropriate drive. Click Apply.
 
-To build an image simply use the following command:
-docker build -t *image name*:0.1 .
-This will produce a docker image with the configured name.
+To build the image open a PowerShell window in the dockerfile directory. Run the following command:
+docker build -t *imageName*:0.1 .     (include the white space and trailing period)
+This will produce a docker image with the configured *imageName*.
 
-To run a container of the image and immediatley scan the required files simply run a container and mount your input directory to /input and your output to .output.
-Note that your output directory must be empty or Glasswall will fail to produce an output and will destroy any data present in there.
-An example of the container build command is as follows:
+Before we run a container of the image lets create an input directory and an output directory.
+•	C:\data\input – Place files to be processed here.
+•	C:\data\output – Note that your output directory must be empty or Glasswall will fail to produce an output and will destroy any data present in there.
 
-docker run -it -v C:\data\input:/input -v C:\data\output:/output *image name*:0.1
+Now let’s mount the input and output directories and run a container of our image, using the following command:
+docker run -it -v C:\data\input:/input -v C:\data\output:/output *imageName*:0.1
 
-This command will build the container and mount "C:\data\input" to "/input" on the container and "C:\data\output" to "/output" and then immediatley scan the contents of "/input" ("C:\data\input" on the local machine) and place the regenerated files and analysis reports in  "/output" ("C:\data\output" on the local machine).
+This command will build the container and mount "C:\data\input" to "/input" on the container and "C:\data\output" to "/output" and then immediately process the contents of "/input" and place the regenerated files and analysis reports in "/output".
 
 NOTES:
 
-Please note that at present PDF files are not supported by the Glasswall engine.
-Note that Content Management is currently configured to the default behaviour which is to Sanitise all Content.
+Please be aware that the current release of the Glasswall Core2 Engine does not support PDF.
+The Content Management switches are set to the default behaviour which is to Sanitise all Active Content.
 
 The following changes can be made to the docker file to give additional functionality:
-
 line 15 can be changed and suffixed "-r" to give the ability to recursively scan input directories note that this will work with the default mode and with the following edits.
 
-line 15 can be changed to "CMD /home/glasswall/GWQtCLI -i /input -o /output -x export" to produce export packages instead of analysis reports and regenerated files, please note that the streams for the export package are currently only availible in the SISL format.
+line 15 can be changed to "CMD /home/glasswall/GWQtCLI -i /input -o /output -x export" to produce export packages instead of analysis reports and regenerated files, please note that the streams for the export package are currently only available in the SISL format.
 
 line 15 can be changed to "CMD /home/glasswall/GWQtCLI -i /input -o /output -x import" to reimport exported archives and produce regenerated files and analysis reports.
 
-This is also availible in a pre built docker image in the following location: https://hub.docker.com/r/mgreengw/glasswall_analyseandregenerate
+This is also available in a pre-built docker image in the following location: https://hub.docker.com/r/mgreengw/glasswall_analyseandregenerate
+
+
