@@ -9,7 +9,7 @@ To build the image open a PowerShell window in the dockerfile directory. Run the
 docker build -t *imageName*:0.1 .     (include the white space and trailing period)
 This will produce a docker image with the configured *imageName*.
 
-Before we run a container of the image lets create an input directory and an output directory.
+Before we run a container of the image lets create an input directory and an output directory, for instance:
 •	C:\data\input – Place files to be processed here.
 •	C:\data\output – Note that your output directory must be empty or Glasswall will fail to produce an output and will destroy any data present in there.
 
