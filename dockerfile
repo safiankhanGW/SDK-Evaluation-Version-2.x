@@ -1,5 +1,5 @@
 FROM centos:7
-COPY ["Lib/*"                , "/home/glasswall/"]
+COPY ["Lib/*"              , "/home/glasswall/"]
 COPY ["GWQtCLI"            , "/home/glasswall/"]
 RUN ln -s /home/glasswall/libglasswall_core2.so /usr/lib/libglasswall_core2.so.1
 RUN ln -s /home/glasswall/libQt5Concurrent.so /usr/lib/libQt5Concurrent.so.5
