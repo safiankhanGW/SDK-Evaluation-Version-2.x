@@ -1,6 +1,7 @@
 FROM centos:7
 COPY ["Lib/*"              , "/home/glasswall/"]
 COPY ["GWQtCLI"            , "/home/glasswall/"]
+RUN yum install libfreetype.so.6 -y yum install libpthread.so.0 -y yum install fontconfig -y 
 RUN ln -s /home/glasswall/libglasswall_core2.so /usr/lib/libglasswall_core2.so.1
 RUN ln -s /home/glasswall/libQt5Concurrent.so /usr/lib/libQt5Concurrent.so.5
 RUN ln -s /home/glasswall/libQt5Core.so /usr/lib/libQt5Core.so.5
