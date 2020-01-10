@@ -34,3 +34,7 @@ line 15 can be changed to "CMD /home/glasswall/GWQtCLI -i /input -o /output -x e
 line 15 can be changed to "CMD /home/glasswall/GWQtCLI -i /input -o /output -x import" to reimport exported archives and produce regenerated files and analysis reports.
 
 This is also available in a pre-built docker image in the following location: https://hub.docker.com/repository/docker/glasswallsolutions/evaluationsdk
+
+
+:1 is Glasswall 1.5 
+:2 is Glasswall 2.0
