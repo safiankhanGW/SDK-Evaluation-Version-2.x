@@ -7,7 +7,7 @@ Begin by downloading the files to a clean workspace. Check that the dockerfile i
 If you haven’t used docker before you will need to install it now. You will need to share the drive you want to input and output data from with your instance of docker. To do this right click docker in the system tray. Click settings. Click Shared Drives and share the appropriate drive. Click Apply.
 
 To build the image open a PowerShell window in the dockerfile directory. Run the following command:
-docker build -t *imageName*:0.1 .     (include the white space and trailing period)
+docker build -t *imageName*:0.2 .     (include the white space and trailing period)
 This will produce a docker image with the configured *imageName*.
 
 Before we run a container of the image lets create an input directory and an output directory, for instance:
@@ -17,7 +17,7 @@ Before we run a container of the image lets create an input directory and an out
 •	C:\data\output – Note that your output directory must be empty or Glasswall will fail to produce an output and will destroy any data present in there.
 
 Now let’s mount the input and output directories and run a container of our image, using the following command:
-docker run -it -v C:\data\input:/input -v C:\data\output:/output *imageName*:0.1
+docker run -it -v C:\data\input:/input -v C:\data\output:/output *imageName*:0.2
 
 This command will build the container and mount "C:\data\input" to "/input" on the container and "C:\data\output" to "/output" and then immediately process the contents of "/input" and place the regenerated files and analysis reports in "/output".
 
@@ -33,4 +33,8 @@ line 15 can be changed to "CMD /home/glasswall/GWQtCLI -i /input -o /output -x e
 
 line 15 can be changed to "CMD /home/glasswall/GWQtCLI -i /input -o /output -x import" to reimport exported archives and produce regenerated files and analysis reports.
 
-This is also available in a pre-built docker image in the following location: https://hub.docker.com/r/mgreengw/glasswall_analyseandregenerate
+This is also available in a pre-built docker image in the following location: https://hub.docker.com/repository/docker/glasswallsolutions/evaluationsdk
+
+
+:1 is Glasswall 1.5 
+:2 is Glasswall 2.0
