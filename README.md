@@ -1,5 +1,5 @@
-# SDK2.01 Evaluation
-Evaluation version of the Glasswall File Trust SDK (Alpha) expires 07/02/2020
+# SDK 2.X Evaluation
+Evaluation version of the Glasswall File Trust SDK (Alpha) expires 20/02/2020
 
 This project can be used to build a CentOS7 image, containing version 2 of the Glasswall core engine. The engine is configured to run files in both analysis and protect modes. File are processed from a mounted directory and regenerated into a separate output directory.
 Begin by downloading the files to a clean workspace. Check that the dockerfile is in the same directory as the release package (The lib folder containing all the Core 2 libraries and GWQtCLI) the release package which can be found here: https://github.com/filetrust/SDK2.01Evaluation. 
@@ -36,5 +36,5 @@ line 15 can be changed to "CMD /home/glasswall/GWQtCLI -i /input -o /output -x i
 This is also available in a pre-built docker image in the following location: https://hub.docker.com/repository/docker/glasswallsolutions/evaluationsdk
 
 
-:1 is Glasswall 1.5 
-:2 is Glasswall 2.0
+:1 is Glasswall 1.X 
+:2 is Glasswall 2.X
