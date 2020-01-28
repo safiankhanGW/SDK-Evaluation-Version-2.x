@@ -32,7 +32,7 @@ This command will build the container and mount "C:\data\input" to "/input" on t
 
 ## NOTES
 
-- Please be aware that the current release of the SDK 2.x engine does not fully support PDF file types.
+- Please be aware that the current release of the SDK 2.x engine does not fully support the PDF file format.
 
 - The Content Management switches are set to the default behaviour which is to Sanitise all Active Content.
 
