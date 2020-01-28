@@ -3,11 +3,16 @@ Evaluation version of the Glasswall File Trust SDK (Alpha) expires 20/02/2020
 
 The repository containing all the SDK 2.x libraries and CLI tool can be found here: https://github.com/filetrust/SDK-Evaluation-Version-2.x. 
 
+
+## SDK Documentation
+
+- For SDK 2.x documentation [Click Here](https://docs.glasswallsolutions.com/sdk/).
+
 ## Docker
 This project can be used to build a CentOS7 image, containing version 2 of the Glasswall core engine. The engine is configured to run files in both analysis and protect modes. File are processed from a mounted directory and regenerated into a separate output directory.
 Begin by downloading the files to a clean workspace. Check that the dockerfile is in the same directory as the release package.
 
-If you haven’t used docker before you will need to install it now. You will need to share the drive you want to input and output data from with your instance of docker. To do this right click docker in the system tray. Click settings. Click Shared Drives and share the appropriate drive. Click 'Apply'.
+If you haven’t used docker before you will need to install it now. You will need to share the drive you want to input and output data from with your instance of docker. To do this right click docker in the system tray. Click 'settings'. Click 'Shared Drives' and share the appropriate drive. Click 'Apply'.
 
 ### Windows
 To build the image open a PowerShell window in the dockerfile directory. Run the following command:
